@@ -1,0 +1,81 @@
+abstract class Animal {
+    abstract void makeVoice();
+}
+
+// Define specific animal subclasses
+class Cow extends Animal {
+    @Override
+    void makeVoice() {
+        System.out.println("Cow: Moo Moo");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeVoice() {
+        System.out.println("Dog: Woof Woof");
+    }
+}
+
+class Pig extends Animal {
+    @Override
+    void makeVoice() {
+        System.out.println("Pig: Oink Oink");
+    }
+}
+
+class Goat extends Animal {
+    @Override
+    void makeVoice() {
+        System.out.println("Goat: Baa Baa");
+    }
+}
+
+class Lion extends Animal {
+    @Override
+    void makeVoice() {
+        System.out.println("Lion: Roar");
+    }
+}
+
+// Define the Voice class
+class Voice {
+    private Animal[] animals = new Animal[5];
+
+    // Method to initialize the animals array
+    void prepareVoice() {
+        animals[0] = new Cow();
+        animals[1] = new Dog();
+        animals[2] = new Pig();
+        animals[3] = new Goat();
+        animals[4] = new Lion();
+    }
+
+    // Method to make all animals produce their voices
+    void hear() {
+        for (Animal animal : animals) {
+            if (animal != null) {
+                animal.makeVoice();
+            }
+        }
+    }
+}
+
+// Define the Voice2 class with a template method
+class Voice2 {
+    private Voice voice = new Voice();
+
+    // Template method to enforce sequence
+    void templateMethod() {
+        voice.prepareVoice();
+        voice.hear();
+    }
+}
+
+// Define the Test class with main method
+public class Test {
+    public static void main(String[] args) {
+        Voice2 voice2 = new Voice2();
+        voice2.templateMethod(); // Enforce correct order of execution
+    }
+}
