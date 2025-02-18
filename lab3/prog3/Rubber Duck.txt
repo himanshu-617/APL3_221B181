@@ -1,0 +1,7 @@
+// Rubber Duck (Squeaks, Can't Fly)
+public class RubberDuck extends Duck implements Quackable {
+    @Override
+    public void quack() {
+        System.out.println("Rubber Duck squeaks.");
+    }
+}

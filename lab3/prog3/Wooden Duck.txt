@@ -1,0 +1,4 @@
+// Wooden Duck (Mute, Can't Fly)
+public class WoodenDuck extends Duck {
+    // No quack, no fly
+}
